@@ -70,14 +70,22 @@ const users = [
     },
 ]
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
 // console.log(Object.keys(tinderUser)); // the data type of the output is array
 // console.log(Object.values(tinderUser)); // output is array as well
 // console.log(Object.entries(tinderUser)); // [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ] // this is also array
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); // true
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')); // true
 
+// destructuring in objects
+const course = {
+    name: "js in hindi",
+    price: "999",
+    teacher: "leo"
+}
 
-
+const {teacher: tutor} = course
+// console.log(teacher)
+console.log(tutor)
 
