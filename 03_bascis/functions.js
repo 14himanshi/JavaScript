@@ -71,12 +71,45 @@ var c = 30 // var is not a scopr variable
 {} // yeh curly braces ko hi scope bolte hai 
    // yeh jab if-else, function , switch ke sath aata hai toh woh scope ho jata hai
 
-console.log(a);
-console.log(b);
-console.log(c);
+// console.log(a);
+// console.log(b);
+// console.log(c);
 
 // node mai and browser pe global scope different hota hai
 
+function one(){
+    const username = "himanshi"
+    function two(){
+        const website = "youtube"
+        console.log(username)
+    }
+    two()
+    // console.log(website)
+}
+
+// one()
+
+// if (true){
+//     const user="leo"
+//     if(user==="leo"){
+//         const website = "youtube"
+//         console.log(user + website);
+        
+//     }
+//     console.log(user)
+// }
+
+// ******************************* interesting *******************************************************
+
+addOne(5) // here no error will come
+function addOne(num)
+{
+    return num + 1
+}
 
 
-
+addTwo(5) // here error will come 
+// isko expression bolte hai, asse bhi functions bana sakte hai
+const addTwo = function(num) {
+    return num + 2
+}
