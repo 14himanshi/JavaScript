@@ -27,7 +27,6 @@ example:
 */ 
 
 /*
-
 1) sabse pehle humare pass aaega global execution context aur yeh this ke ander allocate kar diya jata hai
     global execution context -> this
 
@@ -48,13 +47,18 @@ example:
                                                                                                                                                                                                                                                     total -> undefined        total -> 15                
         it will return the value in global execution context of the code
         after the work of the local exececutional context is done it will be deleted
-                                                                                                                                                                                                                                                                                 return -> total -> 15               
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                              */
+        result <- 15                                                                                                                                                                                                                                                                         return -> total -> 15               
+    8   result2 -> addNum                                                                                                                                                                                                                                                   
+        addNum -> (new variable environment + new execution thread banega) 1) memory phase         2) execution phase                                                                                                                                                                                                                                     
+                                                                              num1 -> undefined       num1 -> 10                                                                                                                                                               
+                                                                              num2 -> undefined       num2 -> 2                                                                                                                                                               
+                                                                              total -> undefined      total -> 12                                                                                                                                                                
+        result2 -> 12  abhi yeh gloabl execution unit mai chala jaaega                                                                                            result2 -> 12                                                                                                                                                                         
+*/
+
+/*
+Call Stack in javascr
+*/
 
 /*
 
