@@ -57,7 +57,10 @@ example:
 */
 
 /*
-Call Stack in javascr
+Call Stack in javascript:
+    1) Global execution context (yeh sabse pehle hota hai call stack mai)
+    2) Jo function call hua hai that will be stored in the stack and as soon as the function is completed it will be taken out of the stack
+    3) Abhi jo function ke ander function hota hai woh kese work karta hai : outer func pehle stack mai jaaega fir inner func jab call hoga woh bhi stack mai add ho jaaega , fir jab inner func khatam hoga toh nikal jaaega stack mai se (and sirf outer func reh jaaega stack mai) fir jab outer func khatam hoga woh bhi nikal jaaega stack mai se ; here LIFO concept will work
 */
 
 /*
