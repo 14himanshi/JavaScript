@@ -113,3 +113,10 @@ addTwo(5) // here error will come
 const addTwo = function(num) {
     return num + 2
 }
+
+
+
+
+
+
+
