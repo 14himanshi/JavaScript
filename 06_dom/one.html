@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur Code
+            <span style="display: none;">test text</span>
+        </h1>
+        <h2>Loreum ipsum dolor sit amet.</h2>
+        <h2>Loreum ipsum dolor sit amet.</h2>
+        <h2>Loreum ipsum dolor sit amet.</h2>
+        <p>Loreum ipsum dolor sit amet.</p>
+        <input type="password" />
+        <ul>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+            <li class="list-item">one</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!--
+
+window is a complex onject in web browsers. 
+document is a attribute in window but you can access docuemnt without window.document
+
+-->
+
+<!--
+
+const title = document.getElementById('title')
+title.innerText   // iska output yeh hi milega jo ki screen pe visible hai
+// 'DOM learning on Chai aur code'
+
+title.textContent.    // iska output yeh hi milega jo html file mai hai content woh     
+// 'DOM learning on Chai aur code test text'
+
+title.innerHTML.    // yeh hume pura html jo likha hai file mai woh print karta hai
+// 'DOM learning on Chai aur Code<span style="display: none;">test text</span>\n  
+
+document.getElementsByClassName('haeding').   // this will return us a HTMLCollection not an array
+
+document.querySelector('h1')    // it will select the first html element which is h1
+document.querySelector('.heading').    // it will select the first element on the page with the class heading on the html page
+document.querySelector('input[type="password"]')
+// <input type="password" />
+
+// yeha pe css mai jaise likhte hai waise hi querySelectors ke ander likhne ka (waise hi brackets ke ander likhne ka)
+
+
+document.querySelectorAll('h2').  // this will return us a nodelist and not an array
+
+nodeList and HTMLCollection are not pure arrays
+nodelist and htmlcollection mai map nahi hai but foreach hai
+
+const tempLiList = document.querySelector('li')
+tempLiList[0].style.color = "green".  // kuch bhi changes karna hoga nodelist ya fir htmlcollection mai toh hume index dena hi hoga (even if they have only one element present in them)
+
+-->
+
+<!--
+
+htmlcolletion does not has foreach option in it
+if you want to use foreach then you will convert it to array using Array.from() and then use the foreach feature
+
+-->
+
+
+
+
+
+
