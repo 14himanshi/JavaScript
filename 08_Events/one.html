@@ -12,10 +12,35 @@
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>  <!-- onclick="alert('Owl was Clicked!!!')" we can add this in attribute -->  <!--this is not a nice approach, as when our application will scale it will not be nice-->
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
 </body>
+<script>
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, offset, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    // attackEvent(), (yeh bahot pehle use kiya jata tha)
+    // jQuery -> on  (yeh bhi pehle use karte the)
+    // this is also not so nice approach as we can face some issues with the onclick event, hume bahot zyada functionality nahi milta isliye hume eventListeners use karna chahiye, yeh method bus features kaam deta hai
+    // document.getElementById('owl').onclick = function(){
+    //     alert("Owl was Clicked")
+    // }
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("click inside the UI"); // yeh ek object hai , iske methods and properties pe bahot questions puchte hai interview mai
+    }, false)
+    // the default third parameter is false as well, it is an important parameter and is asked in interviews a lot of times
+    // what is the third parameter now? 
+    // the third parameter is called event propogation, 
+    // bahot applications asse hote hai jo bina yeh third parameter diye chalte hi nahi hai
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("clicked the owl"); // yeh ek object hai , iske methods and properties pe bahot questions puchte hai interview mai
+    }, false)
+
+</script>
 </html>
