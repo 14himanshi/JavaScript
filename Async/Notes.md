@@ -29,3 +29,10 @@ here the importance of async is clearly visible as it will print the next lines 
 
 there is never nice or bad, there are use-case. like in above example blocking code is better
 
+task queue is something that makes js so fats and asynchronous
+there is also something called high priority queue or promise queue
+
+when ever some program is executed in javascript, 
+in call stack-> glocabal execution code is stored, along with functions is loaded one by one
+
+
