@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+    <script>
+        const sayName = function(){
+            console.log("Hi Himanshi");
+        };
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "best JS Series"
+        }
+        const changeMe = setTimeout(changeText, 3000) 
+        // this will be executed only once
+        // this is a method, this method also calls an API 
+        // these are not just functions , we get these functions through browser
+        // we will get these functions in other APIs as well as in other browser environement. but these are not part of core javascript engine(which has only memory heap and call stack). 
+        // As soon as this function is called it will go outside and comes back again using event queue
+        // clearInterval, clearTimeout are parts of setTimeout and setInterval only
+        // what does this setTimeout() requires: handler (it is a callback function only(a function that does not has name)) and timeout (which is always in milliseconds)
+
+        // setInterval function: it will do a certen function again and again in some specified interval
+
+        // what if we want to stop that timeout function? we will use this clearTimeout function
+        // this function needs the refernce of the setTimeout, as there can be many setTimeout functions it needs to now which timeout function it has to clear
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearTimeout(changeMe)
+            console.log('STOPPED')
+        })
+        
+    </script>
+</body>
+</html>
