@@ -13,40 +13,27 @@
             <div id="followers"></div>
         </div>
     </div>
-    <div>
+    <div id="div2">
         <button id="btn">Click</button>
     </div>
 </body>
 <script>
-    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest()
 
-    document.querySelector('btn').addEventListener('click', () => {
-        getAPI()
-    })
 
-    function getAPI(){
-        xhr.open('GET', requestUrl)
+    document.querySelector('#btn').addEventListener('click', () => {
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest()
         xhr.onreadystatechange = function(){
             if(xhr.readyState === 4){
                 const data = JSON.parse(this.response) 
-                changes(data.avatar_url, data.followers)
-                // console.log(typeof data.avatar_url)
+                document.querySelector('#photo').innerHTML = ` <img src=${data.avatar_url} alt="photo"> `
+                document.querySelector('#followers').innerHTML = ` No.of Followers are: ${data.followers}`
+                document.querySelector('#div2').innerHTML = ``
             }
-    }
-    xhr.send();
-    }
-
-    function changes(url, num){
-        pasteImage(url)
-        pasteFollowers(num)
-    }
-    function pasteImage(url){
-        document.querySelector('#photo').innerHTML = ` <img src=${url} alt="photo"> `
-    }
-    function pasteFollowers(num){
-        document.querySelector('#followers').innerHTML = ` No.of Followers are: ${num}`
-    }
+        }
+        xhr.open('GET', requestUrl)
+        xhr.send();
+    })
 
 </script>
 </html> 
