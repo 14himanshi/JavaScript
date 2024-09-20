@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <div id="card">
+            <div id="photo"></div>
+            <div id="followers"></div>
+        </div>
+    </div>
+    <div>
+        <button id="btn">Click</button>
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+
+    document.querySelector('btn').addEventListener('click', () => {
+        getAPI()
+    })
+
+    function getAPI(){
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.response) 
+                changes(data.avatar_url, data.followers)
+                // console.log(typeof data.avatar_url)
+            }
+    }
+    xhr.send();
+    }
+
+    function changes(url, num){
+        pasteImage(url)
+        pasteFollowers(num)
+    }
+    function pasteImage(url){
+        document.querySelector('#photo').innerHTML = ` <img src=${url} alt="photo"> `
+    }
+    function pasteFollowers(num){
+        document.querySelector('#followers').innerHTML = ` No.of Followers are: ${num}`
+    }
+
+</script>
+</html> 

@@ -6,11 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div id="card">
+            <div id="photo"></div>
+            <div id="followers"></div>
+        </div>
+    </div>
 </body>
 <script>
     // XmlHttpRequest (this is AJAX related)
-    
+    const requestUrl = 'https://api.github.com/users/14himanshi'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.response) // data is of string type , then we converted it to json type using JSON.parse
+            console.log(data);
+        }
+    }
+    xhr.send();
 
 </script>
-</html>
+</html> 
